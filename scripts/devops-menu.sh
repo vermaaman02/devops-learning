@@ -13,7 +13,7 @@ show_menu() {
     echo "5. Service Status"
     echo "6. Disk Usage Report"
     echo "0. Exit"
-    echo "================================"
+    echo "===================================="
 }
 
 system_info() {
