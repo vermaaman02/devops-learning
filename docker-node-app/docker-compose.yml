@@ -1,0 +1,20 @@
+version: "3.9"
+# Docker Compose file format version
+
+services:
+  app:
+    build: .
+    # build: .  => current folder se image build karo (Dockerfile use karega)
+    container_name: node-app-compose
+    ports:
+      - "3000:3000"
+      # host:container (same jaise docker run -p 3000:3000)
+    environment:
+      - PORT=3000
+      # Yeh process.env.PORT ko value dega server.js me
+    restart: unless-stopped
+    # Agar container crash ho jaye to auto restart karo
+    # unless-stopped = manually stop karega to phir nahi chalega
+
+    # In future yahan volumes, depends_on, etc. add karenge
+
